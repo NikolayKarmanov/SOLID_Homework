@@ -7,9 +7,7 @@ public class Main {
     public static void main(String[] args) {
         // Перенесли логику заполнения ассортимента товара в наличии и вывода его на экран в класс Products.
         // Это сделано больше для удобства и для того, чтобы размер мапы products использовать в классе Basket
-
-        Products productsAvailable = new Products();
-        System.out.println(productsAvailable.toString());
+        Products.showProducts();
 
         System.out.println("Введите два слова: название товара и количество. Или end");
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +20,7 @@ public class Main {
             int count = Integer.parseInt(parts[1]);
             basket.addPurchase(product, count);
         }
-        long sum = basket.sum(productsAvailable.getProducts());
+        long sum = basket.sum(Products.getProducts());
         System.out.println("ИТОГО: " + sum);
     }
 }
